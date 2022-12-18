@@ -1,8 +1,10 @@
+"""Импортируем модуль randint."""
 from random import randint
 from graphic_arts.start_game_banner import run_screensaver
 
 
 def attack(char_name: str, char_class: str) -> str:
+    """Функция рассчета и вывода нанесённого урона по классам."""
     if char_class == 'warrior':
         return (f'{char_name} нанёс урон противнику равный '
                 f'{5 + randint(3, 5)}')
@@ -16,6 +18,7 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Функция рассчёта и вывода блокированного урона по классам."""
     if char_class == 'warrior':
         return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
     if char_class == 'mage':
@@ -26,6 +29,7 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Функция расчёта и вывода специального умения по классам."""
     if char_class == 'warrior':
         return (f'{char_name} применил специальное умение «Выносливость'
                 f'{80 + 25}»')
@@ -39,6 +43,7 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Фунцкия выбора класса."""
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный'
               ' боец ближнего боя.')
@@ -66,6 +71,7 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Функция вывода описания класса."""
     approve_choice: str = None
     char_class: str = None
     while approve_choice != 'y':
@@ -89,6 +95,7 @@ def choice_char_class() -> str:
 
 if __name__ == '__main__':
     def main() -> None:
+        """Функция приветствия и ознакомелния."""
         run_screensaver()
         print('Приветствую тебя, искатель приключений!')
         print('Прежде чем начать игру...')
